@@ -1,0 +1,111 @@
+body {
+  background-color: rgba(0, 0, 0, 1);
+}
+hr {
+  color: rgba(255, 255, 255, 1);
+}
+.mainBlock {
+  display: block;
+  margin: 50px auto;
+  max-width: 1300px;
+  block-size: 600px;
+  background-color: black;
+}
+header {
+  color: white;
+  display: block;
+  margin: 0 auto;
+  padding: 75px;
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 68px;
+}
+table {
+  border: none;
+}
+td {
+  border: none;
+}
+.leftSBlock {
+  padding-right: 10px;
+}
+input {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+h4 {
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+input {
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 1);
+  transition: all 150ms ease-in-out;
+}
+input:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 1);
+}
+.tableForecast {
+  color: rgba(255, 255, 255, 1);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.rightSBlock {
+  max-width: 800px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 0;
+  margin-left: 20px;
+}
+.currently {
+  text-align: center;
+}
+.information {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  font-family: "Montserrat", sans-serif;
+  margin: 60px auto;
+}
+.maxMinTemp {
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+}
+.date {
+  text-align: right;
+  /*tratar da situação do bottom alignment*/
+  vertical-align: text-bottom;
+  color: rgba(255, 255, 255, 1);
+  font-family: "Montserrat", sans-serif;
+  font-size: 27px;
+}
+.extraInfo {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.extraInfo table {
+  margin: 0;
+  max-height: 100px;
+}
+.tableInfo tr {
+  line-height: 10px;
+  height: 10px;
+  color: rgba(255, 255, 255, 1);
+}
+.tdInfo {
+  text-align: right;
+}
+.tdValue {
+  text-align: left;
+}
+.codedBy {
+  text-align: right;
+  color: rgba(255, 255, 255, 1);
+  font-family: "Montserrat", sans-serif;
+}
