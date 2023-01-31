@@ -109,3 +109,7 @@ input:hover {
   color: rgba(255, 255, 255, 1);
   font-family: "Montserrat", sans-serif;
 }
+
+a {
+  color: rgba(255, 255, 255, 0.7);
+}
