@@ -4,6 +4,7 @@ body {
 hr {
   color: rgba(255, 255, 255, 1);
 }
+/*Main Block & Header*/
 .mainBlock {
   display: block;
   margin: 50px auto;
@@ -26,12 +27,9 @@ table {
 td {
   border: none;
 }
+/*Left SBlock*/
 .leftSBlock {
   padding-right: 10px;
-}
-input {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
 }
 h4 {
   color: rgba(255, 255, 255, 1);
@@ -39,6 +37,8 @@ h4 {
   font-family: "Montserrat", sans-serif;
 }
 input {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   text-align: center;
   color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(255, 255, 255, 1);
@@ -50,10 +50,36 @@ input:hover {
   background: rgba(255, 255, 255, 0.3);
   color: rgba(255, 255, 255, 1);
 }
+.magnifierButton {
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 1);
+  transition: all 150ms ease-in-out;
+}
+.magnifierButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 1);
+}
+.degreeButton {
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  font-family: "Source Sans Pro", sans-serif;
+  border: 1px solid rgba(255, 255, 255, 1);
+  border-radius: 7px;
+  background: rgba(0, 0, 0, 1);
+  transition: all 150ms ease-in-out;
+}
+.degreeButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 1);
+}
 .tableForecast {
   color: rgba(255, 255, 255, 1);
   font-family: Arial, Helvetica, sans-serif;
 }
+/*Right SBlock*/
 .rightSBlock {
   max-width: 800px;
   border: 1px solid white;
@@ -104,6 +130,7 @@ input:hover {
 .tdValue {
   text-align: left;
 }
+/*Footer*/
 .codedBy {
   text-align: right;
   color: rgba(255, 255, 255, 1);

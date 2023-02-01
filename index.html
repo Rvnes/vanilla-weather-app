@@ -47,7 +47,14 @@
                     autocomplete="off"
                     id="searchForm-input"
                   />
-                  <input type="submit" value="Search" />
+                  <button
+                    type="submit"
+                    class="magnifierButton"
+                    id="searchButton"
+                  >
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <button type="button" class="degreeButton">°F</button>
                 </form>
               </span>
             </div>
@@ -106,24 +113,24 @@
                   <tbody>
                     <tr>
                       <td class="tdInfo">Precipitation</td>
-                      <td class="tdValue">99mm</td>
+                      <td class="tdValue precipitationValue"></td>
                     </tr>
                     <tr>
                       <td class="tdInfo">Humidity</td>
-                      <td class="tdValue">78%</td>
+                      <td class="tdValue humidityValue"></td>
                     </tr>
                     <tr>
                       <td class="tdInfo">Wind</td>
-                      <td class="tdValue">13km/h</td>
+                      <td class="tdValue windValue"></td>
                     </tr>
                     <tr>
                       <td class="tdInfo">Sunset</td>
-                      <td class="tdValue">5:50pm</td>
+                      <td class="tdValue sunsetValue"></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div class="col-6 date">13th Jan 2023</div>
+              <div class="col-6 date"></div>
             </div>
           </div>
         </div>
