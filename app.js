@@ -63,11 +63,14 @@ function changeCity(event) {
 }
 
 function getApiInfo(response) {
-  let temperature = document.querySelector(".temperature");
-  temperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  //let icon = document.querySelector(".icon");
+  //icon.innerHTML = `${response.data.weather.icon}`;
 
   let city = document.querySelector(".city");
   city.innerHTML = `${response.data.name}`;
+
+  let temperature = document.querySelector(".temperature");
+  temperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
 
   let maxTemp = document.querySelector(".maxTemp");
   maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
