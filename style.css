@@ -131,6 +131,43 @@ input:hover {
 .tdValue {
   text-align: left;
 }
+/*Icons*/
+.fa-cloud-bolt {
+  color: rgba(247, 247, 180, 1);
+}
+.fa-rain {
+  color: rgba(180, 218, 247, 1);
+}
+.fa-cloud-showers-heavy {
+  color: rgba(142, 162, 186, 1);
+}
+.fa-snowflake {
+  color: rgba(180, 218, 247, 1);
+}
+.fa-sun {
+  color: rgba(247, 247, 180, 1);
+}
+.fa-moon {
+  color: rgba(158, 158, 167, 1);
+}
+.fa-cloud {
+  color: rgba(142, 162, 186, 1);
+}
+.fa-smog {
+  color: rgba(198, 198, 198, 1);
+}
+.fa-industry {
+  color: rgba(198, 198, 198, 1);
+}
+.fa-volcano {
+  color: rgba(184, 144, 123, 1);
+}
+.fa-wind {
+  color: rgba(255, 255, 255, 1);
+}
+.fa-tornado {
+  color: rgba(255, 255, 255, 1);
+}
 /*Footer*/
 .codedBy {
   text-align: right;
