@@ -98,7 +98,7 @@ function convertUnix(unixTime) {
   let sunsetHours = sunsetDate.getHours();
   let sunsetMinutes = sunsetDate.getMinutes();
   if (sunsetMinutes < 10) {
-    sunsetMinutes = `0${SunsetMinutes}`;
+    sunsetMinutes = `0${sunsetMinutes}`;
   }
   if (sunsetHours < 10) {
     sunsetHours = `0${sunsetHours}`;
@@ -161,11 +161,10 @@ function icons(responseData) {
   return iconClass;
 }
 
-// função p ter utc time 0 + utc timezone
-//function calculateLocationTime (responseData) {
-//let time = new Date();
-//let utcHours = getUTCHours()
-
-//}
+// UTC
+function calculateLocationTime(responseData) {
+  let time = new Date();
+  let utcHours = getUTCHours();
+}
 
 //Light & Dark mode according to Day&Night Time
