@@ -64,7 +64,8 @@ function changeCity(event) {
 
 function getApiInfo(response) {
   //let icon = document.querySelector(".icon");
-  //icon.innerHTML = `${response.data.weather.icon}`;
+  //icon.innerHTML = icons(response.data);
+  document.getElementById("currentIcon").className = icons(response.data);
 
   let city = document.querySelector(".city");
   city.innerHTML = `${response.data.name}`;
@@ -82,13 +83,89 @@ function getApiInfo(response) {
   humidity.innerHTML = `${response.data.main.humidity}%`;
 
   let wind = document.querySelector(".windValue");
-  wind.innerHTML = `${Math.round(response.wind.speed)}m/s`;
+  wind.innerHTML = `${Math.round(response.data.wind.speed)}m/s`;
 
   let sunset = document.querySelector(".sunsetValue");
-  sunset.innerHTML = `${response.sys.sunset}`;
+  sunset.innerHTML = convertUnix(response.data.sys.sunset);
 
   let precipitation = document.querySelector(".precipitationValue");
-  precipitation.innerHTML = `${response.data.precipitation.value}mm`;
+  precipitation.innerHTML = updatedPrecipitation(response.data);
+}
+
+// Unix Conversion
+function convertUnix(unixTime) {
+  let sunsetDate = new Date(unixTime * 1000);
+  let sunsetHours = sunsetDate.getHours();
+  let sunsetMinutes = sunsetDate.getMinutes();
+  if (sunsetMinutes < 10) {
+    sunsetMinutes = `0${SunsetMinutes}`;
+  }
+  if (sunsetHours < 10) {
+    sunsetHours = `0${sunsetHours}`;
+  }
+
+  let sunset = `${sunsetHours}:${sunsetMinutes}`;
+  return sunset;
+}
+
+//
+function updatedPrecipitation(responseData) {
+  if (responseData.hasOwnProperty("rain")) {
+    return `${Math.round(responseData.rain["1h"])}mm`;
+  } else {
+    return `0mm`;
+  }
 }
 
 // degree Button
+
+//Icons
+
+function icons(responseData) {
+  let conditions = [
+    "Thunderstorm",
+    "Drizzle",
+    "Rain",
+    "Snow",
+    "Clear",
+    "Clouds",
+    "Mist",
+    "Smoke",
+    "Haze",
+    "Dust",
+    "Ash",
+    "Squall",
+    "Tornado",
+  ];
+
+  let icons = [
+    "fa-solid fa-cloud-bolt",
+    "fa-solid fa-rain",
+    "fa-solid fa-cloud-showers-heavy",
+    "fa-solid fa-snowflake",
+    "fa-solid fa-sun",
+    "fa-solid fa-cloud",
+    "fa-solid fa-smog",
+    "fa-solid fa-smog",
+    "fa-solid fa-industry",
+    "fa-solid fa-smog",
+    "fa-solid fa-volcano",
+    "fa-solid fa-wind",
+    "fa-solid-tornado",
+  ];
+
+  let currentCondition = responseData.weather[0].main;
+  console.log(responseData.weather[0].main);
+  let iconIndex = conditions.indexOf(currentCondition);
+  let iconClass = icons[iconIndex];
+  return iconClass;
+}
+
+// função p ter utc time 0 + utc timezone
+//function calculateLocationTime (responseData) {
+//let time = new Date();
+//let utcHours = getUTCHours()
+
+//}
+
+//Light & Dark mode according to Day&Night Time
