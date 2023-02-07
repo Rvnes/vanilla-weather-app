@@ -97,6 +97,14 @@ input:hover {
   font-size: 50px;
   font-family: "Montserrat", sans-serif;
   margin: 60px auto;
+  font-weight: bold;
+}
+.weatherDescription {
+  display: block;
+  margin: 0 auto;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .maxMinTemp {
   text-align: center;

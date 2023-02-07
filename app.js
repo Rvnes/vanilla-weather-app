@@ -73,6 +73,9 @@ function getApiInfo(response) {
   let temperature = document.querySelector(".temperature");
   temperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
 
+  let weatherDescription = document.querySelector(".weatherDescription");
+  weatherDescription.innerHTML = `${response.data.weather[0].description}`;
+
   let maxTemp = document.querySelector(".maxTemp");
   maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
 
