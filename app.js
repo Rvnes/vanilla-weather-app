@@ -1,4 +1,4 @@
-//date
+//date -> dateElement.innerHTML = formatDate(response.data.dt*1000)
 let currentDate = new Date();
 let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 let currentWeekday = days[currentDate.getDay()];
@@ -55,10 +55,7 @@ function changeCity(event) {
   let city = document.querySelector(".city");
   city.innerHTML = `${searchInputForm.value}`;
 
-  let celsiusDegrees = "units=metric";
-  let fahrenheitDegrees = "units-imperial";
-  let apiKey = "12f7d1b3e4be63143ca354d998368e30";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInputForm.value}&${celsiusDegrees}&appid=${apiKey}`;
+  let apiUrl = `${apiEndpoint}${searchInputForm.value}&${celsiusApi}&appid=${apiKey}`;
   axios.get(apiUrl).then(getApiInfo);
 }
 
@@ -70,17 +67,16 @@ function getApiInfo(response) {
   let city = document.querySelector(".city");
   city.innerHTML = `${response.data.name}`;
 
-  let temperature = document.querySelector(".temperature");
-  temperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  temperature.innerHTML = `${Math.round(response.data.main.temp)}°`;
 
   let weatherDescription = document.querySelector(".weatherDescription");
   weatherDescription.innerHTML = `${response.data.weather[0].description}`;
 
   let maxTemp = document.querySelector(".maxTemp");
-  maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
+  maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°`;
 
   let minTemp = document.querySelector(".minTemp");
-  minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
+  minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}°`;
 
   let humidity = document.querySelector(".humidityValue");
   humidity.innerHTML = `${response.data.main.humidity}%`;
@@ -95,7 +91,7 @@ function getApiInfo(response) {
   precipitation.innerHTML = updatedPrecipitation(response.data);
 }
 
-// Unix Conversion
+// Unix Conversion -> need to finish this
 function convertUnix(unixTime) {
   let sunsetDate = new Date(unixTime * 1000);
   let sunsetHours = sunsetDate.getHours();
@@ -119,8 +115,6 @@ function updatedPrecipitation(responseData) {
     return `0mm`;
   }
 }
-
-// degree Button
 
 //Icons
 
@@ -165,9 +159,32 @@ function icons(responseData) {
 }
 
 // UTC
-function calculateLocationTime(responseData) {
-  let time = new Date();
-  let utcHours = getUTCHours();
+//function calculateLocationTime(responseData) {
+//  let time = new Date();
+//  let utcHours = getUTCHours();
+//}
+
+//Unit Conversion Button -> this function is incorrect/not working - take another look
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+
+  let city = document.getElementsByClassName("city").innerHTML;
+
+  let apiUrl = `${apiEndpoint}${city}&${fahrenheitApi}&appid=${apiKey}`;
+  axios.get(apiUrl).then(getApiInfo);
 }
 
-//Light & Dark mode according to Day&Night Time
+fahrenheitButton = document.querySelector(".degreeButton");
+fahrenheitButton.addEventListener("click", displayFahrenheitTemp);
+
+//Global Variables
+
+let temperature = document.querySelector(".temperature");
+let maxTemp = document.querySelector(".maxTemp");
+let minTemp = document.querySelector(".minTemp");
+
+let celsiusApi = "units=metric";
+let fahrenheitApi = "units=imperial";
+let apiKey = "12f7d1b3e4be63143ca354d998368e30";
+let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?q=";
