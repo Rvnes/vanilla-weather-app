@@ -169,7 +169,7 @@ function icons(responseData) {
 function displayFahrenheitTemp(event) {
   event.preventDefault();
 
-  let city = document.getElementsByClassName("city").innerHTML;
+  let city = document.querySelector(".city").innerHTML;
 
   let apiUrl = `${apiEndpoint}${city}&${fahrenheitApi}&appid=${apiKey}`;
   axios.get(apiUrl).then(getApiInfo);
