@@ -102,19 +102,15 @@ function apiForecastInfo(response) {
   document.getElementById("forecastIcon1").className = icons(
     response.data.list[8]
   );
-
   document.getElementById("forecastIcon2").className = icons(
     response.data.list[16]
   );
-
   document.getElementById("forecastIcon3").className = icons(
     response.data.list[24]
   );
-
   document.getElementById("forecastIcon4").className = icons(
     response.data.list[32]
   );
-
   document.getElementById("forecastIcon5").className = icons(
     response.data.list[39]
   );
@@ -243,7 +239,6 @@ function updatedPrecipitation(responseData) {
 }
 
 //Icons
-
 function icons(responseData) {
   let conditions = [
     "Thunderstorm",
@@ -262,25 +257,25 @@ function icons(responseData) {
   ];
 
   let icons = [
-    "fa-solid fa-cloud-bolt",
-    "fa-solid fa-rain",
-    "fa-solid fa-cloud-showers-heavy",
-    "fa-solid fa-snowflake",
-    "fa-solid fa-sun",
-    "fa-solid fa-cloud",
-    "fa-solid fa-smog",
-    "fa-solid fa-smog",
-    "fa-solid fa-industry",
-    "fa-solid fa-smog",
-    "fa-solid fa-volcano",
-    "fa-solid fa-wind",
-    "fa-solid-tornado",
+    "fa-solid fa-cloud-bolt fa-shake",
+    "fa-solid fa-rain fa-bounce",
+    "fa-solid fa-cloud-showers-heavy fa-bounce",
+    "fa-solid fa-snowflake fa-spin",
+    "fa-solid fa-sun fa-spin",
+    "fa-solid fa-cloud fa-bounce",
+    "fa-solid fa-smog fa-fade",
+    "fa-solid fa-smog fa-fade",
+    "fa-solid fa-industry fa-fade",
+    "fa-solid fa-smog fa-fade",
+    "fa-solid fa-volcano fa-bounce",
+    "fa-solid fa-wind fa-flip",
+    "fa-solid-tornado fa-flip",
   ];
 
   let night = responseData.weather[0].icon;
 
   if (responseData.weather[0].main === "Clear" && night.endsWith("n")) {
-    icons[4] = "fa-solid fa-moon";
+    icons[4] = "fa-solid fa-moon fa-beat";
   }
 
   let currentCondition = responseData.weather[0].main;
@@ -289,8 +284,7 @@ function icons(responseData) {
   return iconClass;
 }
 
-//Unit Conversion Button -> this function needs to be improved
-
+//Unit Conversion Button
 function displayFahrenheitTemp(event) {
   event.preventDefault();
 

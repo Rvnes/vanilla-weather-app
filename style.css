@@ -145,27 +145,38 @@ input:hover {
 }
 .fa-rain {
   color: rgba(180, 218, 247, 1);
+  --fa-bounce-height: 10;
+  --fa-bounce-rebound: 0;
 }
 .fa-cloud-showers-heavy {
   color: rgba(142, 162, 186, 1);
+  --fa-bounce-height: 10;
+  --fa-bounce-rebound: 1;
 }
 .fa-snowflake {
   color: rgba(180, 218, 247, 1);
+  --fa-animation-duration: 30s;
 }
 .fa-sun {
   color: rgba(247, 247, 180, 1);
+  --fa-animation-duration: 30s;
 }
 .fa-moon {
   color: rgba(158, 158, 167, 1);
+  --fa-beat-scale: 1.2;
+  --fa-animation-duration: 3.5s;
 }
 .fa-cloud {
   color: rgba(142, 162, 186, 1);
+  --fa-bounce-height: 10;
+  --fa-bounce-rebound: 0;
 }
 .fa-smog {
-  color: rgba(198, 198, 198, 1);
+  color: rgb(198, 198, 198);
 }
 .fa-industry {
-  color: rgba(198, 198, 198, 1);
+  color: rgb(198, 198, 198);
+  --fa-animation-duration: 3.5s;
 }
 .fa-volcano {
   color: rgba(184, 144, 123, 1);
