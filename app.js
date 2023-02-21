@@ -62,30 +62,22 @@ function apiCurrentInfo(response) {
   let date = document.querySelector(".date");
   date.innerHTML = getDate(response.data);
 
-  if (currentDegreeUnit === "celsius") {
-    temperature.innerHTML = `${Math.round(response.data.main.temp)}°C`;
-  } else {
-    temperature.innerHTML = `${Math.round(response.data.main.temp)}°F`;
-  }
+  temperature.innerHTML = `${Math.round(
+    response.data.main.temp
+  )}${currentDegreeSymbol}`;
 
   let weatherDescription = document.querySelector(".weatherDescription");
   weatherDescription.innerHTML = `${response.data.weather[0].description}`;
 
-  if (currentDegreeUnit === "celsius") {
-    let maxTemp = document.querySelector(".maxTemp");
-    maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
-  } else {
-    let maxTemp = document.querySelector(".maxTemp");
-    maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°F`;
-  }
+  let maxTemp = document.querySelector(".maxTemp");
+  maxTemp.innerHTML = `${Math.round(
+    response.data.main.temp_max
+  )}${currentDegreeSymbol}`;
 
-  if (currentDegreeUnit === "celsius") {
-    let minTemp = document.querySelector(".minTemp");
-    minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
-  } else {
-    let minTemp = document.querySelector(".minTemp");
-    minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}°F`;
-  }
+  let minTemp = document.querySelector(".minTemp");
+  minTemp.innerHTML = `${Math.round(
+    response.data.main.temp_min
+  )}${currentDegreeSymbol}`;
 
   let humidity = document.querySelector(".humidityValue");
   humidity.innerHTML = `${response.data.main.humidity}%`;
@@ -202,27 +194,27 @@ function displayForecastTemperatures(response) {
   let day1Min = Math.round(Math.min(...day1));
   let day1Max = Math.round(Math.max(...day1));
   let temp1 = document.querySelector(".forecastTemp1");
-  temp1.innerHTML = `${day1Min}° | ${day1Max}°`;
+  temp1.innerHTML = `${day1Min}${currentDegreeSymbol} | ${day1Max}${currentDegreeSymbol}`;
 
   let day2Min = Math.round(Math.min(...day2));
   let day2Max = Math.round(Math.max(...day2));
   let temp2 = document.querySelector(".forecastTemp2");
-  temp2.innerHTML = `${day2Min}° | ${day2Max}°`;
+  temp2.innerHTML = `${day2Min}${currentDegreeSymbol} | ${day2Max}${currentDegreeSymbol}`;
 
   let day3Min = Math.round(Math.min(...day3));
   let day3Max = Math.round(Math.max(...day3));
   let temp3 = document.querySelector(".forecastTemp3");
-  temp3.innerHTML = `${day3Min}° | ${day3Max}°`;
+  temp3.innerHTML = `${day3Min}${currentDegreeSymbol} | ${day3Max}${currentDegreeSymbol}`;
 
   let day4Min = Math.round(Math.min(...day4));
   let day4Max = Math.round(Math.max(...day4));
   let temp4 = document.querySelector(".forecastTemp4");
-  temp4.innerHTML = `${day4Min}° | ${day4Max}°`;
+  temp4.innerHTML = `${day4Min}${currentDegreeSymbol} | ${day4Max}${currentDegreeSymbol}`;
 
   let day5Min = Math.round(Math.min(...day5));
   let day5Max = Math.round(Math.max(...day5));
   let temp5 = document.querySelector(".forecastTemp5");
-  temp5.innerHTML = `${day5Min}° | ${day5Max}°`;
+  temp5.innerHTML = `${day5Min}${currentDegreeSymbol} | ${day5Max}${currentDegreeSymbol}`;
 }
 
 // Unix Conversion for Timestamp
@@ -315,6 +307,7 @@ function displayFahrenheitTemp(event) {
     button.innerHTML = `°C`;
 
     currentDegreeUnit = "fahrenheit";
+    currentDegreeSymbol = "°F";
   } else if (currentDegreeUnit === "fahrenheit") {
     let apiUrl = `${apiEndpoint}weather?q=${city}&${celsiusApi}&appid=${apiKey}`;
     axios.get(apiUrl).then(apiCurrentInfo);
@@ -325,6 +318,7 @@ function displayFahrenheitTemp(event) {
     let button = document.querySelector(".degreeButton");
     button.innerHTML = `°F`;
     currentDegreeUnit = "celsius";
+    currentDegreeSymbol = "°C";
   }
 }
 
@@ -355,6 +349,7 @@ let maxTemp = document.querySelector(".maxTemp");
 let minTemp = document.querySelector(".minTemp");
 
 let currentDegreeUnit = "celsius";
+let currentDegreeSymbol = "°C";
 let celsiusApi = "units=metric";
 let fahrenheitApi = "units=imperial";
 let apiKey = "12f7d1b3e4be63143ca354d998368e30";
