@@ -258,7 +258,7 @@ function icons(responseData) {
 
   let icons = [
     "fa-solid fa-cloud-bolt fa-shake",
-    "fa-solid fa-rain fa-bounce",
+    "fa-solid fa-cloud-rain fa-bounce",
     "fa-solid fa-cloud-showers-heavy fa-bounce",
     "fa-solid fa-snowflake fa-spin",
     "fa-solid fa-sun fa-spin",

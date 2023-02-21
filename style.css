@@ -143,7 +143,7 @@ input:hover {
 .fa-cloud-bolt {
   color: rgba(247, 247, 180, 1);
 }
-.fa-rain {
+.fa-cloud-rain {
   color: rgba(180, 218, 247, 1);
   --fa-bounce-height: 10;
   --fa-bounce-rebound: 0;
@@ -151,7 +151,7 @@ input:hover {
 .fa-cloud-showers-heavy {
   color: rgba(142, 162, 186, 1);
   --fa-bounce-height: 10;
-  --fa-bounce-rebound: 1;
+  --fa-bounce-rebound: 2;
 }
 .fa-snowflake {
   color: rgba(180, 218, 247, 1);
