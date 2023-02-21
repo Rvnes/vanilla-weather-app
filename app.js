@@ -189,28 +189,38 @@ function displayForecastTemperatures(response) {
 
   let day1Min = Math.round(Math.min(...day1));
   let day1Max = Math.round(Math.max(...day1));
-  let temp1 = document.querySelector(".forecastTemp1");
-  temp1.innerHTML = `${day1Min}${currentDegreeSymbol} | ${day1Max}${currentDegreeSymbol}`;
+  let forecastMinTemp1 = document.querySelector(".forecastMinTemp1");
+  forecastMinTemp1.innerHTML = `${day1Min}${currentDegreeSymbol}`;
+  let forecastMaxTemp1 = document.querySelector(".forecastMaxTemp1");
+  forecastMaxTemp1.innerHTML = `${day1Max}${currentDegreeSymbol}`;
 
   let day2Min = Math.round(Math.min(...day2));
   let day2Max = Math.round(Math.max(...day2));
-  let temp2 = document.querySelector(".forecastTemp2");
-  temp2.innerHTML = `${day2Min}${currentDegreeSymbol} | ${day2Max}${currentDegreeSymbol}`;
+  let forecastMinTemp2 = document.querySelector(".forecastMinTemp2");
+  forecastMinTemp2.innerHTML = `${day2Min}${currentDegreeSymbol}`;
+  let forecastMaxTemp2 = document.querySelector(".forecastMaxTemp2");
+  forecastMaxTemp2.innerHTML = `${day2Max}${currentDegreeSymbol}`;
 
   let day3Min = Math.round(Math.min(...day3));
   let day3Max = Math.round(Math.max(...day3));
-  let temp3 = document.querySelector(".forecastTemp3");
-  temp3.innerHTML = `${day3Min}${currentDegreeSymbol} | ${day3Max}${currentDegreeSymbol}`;
+  let forecastMinTemp3 = document.querySelector(".forecastMinTemp3");
+  forecastMinTemp3.innerHTML = `${day3Min}${currentDegreeSymbol}`;
+  let forecastMaxTemp3 = document.querySelector(".forecastMaxTemp3");
+  forecastMaxTemp3.innerHTML = `${day3Max}${currentDegreeSymbol}`;
 
   let day4Min = Math.round(Math.min(...day4));
   let day4Max = Math.round(Math.max(...day4));
-  let temp4 = document.querySelector(".forecastTemp4");
-  temp4.innerHTML = `${day4Min}${currentDegreeSymbol} | ${day4Max}${currentDegreeSymbol}`;
+  let forecastMinTemp4 = document.querySelector(".forecastMinTemp4");
+  forecastMinTemp4.innerHTML = `${day4Min}${currentDegreeSymbol}`;
+  let forecastMaxTemp4 = document.querySelector(".forecastMaxTemp4");
+  forecastMaxTemp4.innerHTML = `${day4Max}${currentDegreeSymbol}`;
 
   let day5Min = Math.round(Math.min(...day5));
   let day5Max = Math.round(Math.max(...day5));
-  let temp5 = document.querySelector(".forecastTemp5");
-  temp5.innerHTML = `${day5Min}${currentDegreeSymbol} | ${day5Max}${currentDegreeSymbol}`;
+  let forecastMinTemp5 = document.querySelector(".forecastMinTemp5");
+  forecastMinTemp5.innerHTML = `${day5Min}${currentDegreeSymbol}`;
+  let forecastMaxTemp5 = document.querySelector(".forecastMaxTemp5");
+  forecastMaxTemp5.innerHTML = `${day5Max}${currentDegreeSymbol}`;
 }
 
 // Unix Conversion for Timestamp
